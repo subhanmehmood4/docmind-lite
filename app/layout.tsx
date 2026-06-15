@@ -8,12 +8,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DocMind — AI Document Q&A",
+  title: "DocMind — Document Intelligence for Legal Teams",
   description:
-    "Upload a PDF and ask questions. Get accurate answers with source citations powered by RAG.",
+    "Upload contracts and policies, ask questions in plain English, and get answers with page-level citations powered by production RAG.",
   openGraph: {
-    title: "DocMind — AI Document Q&A",
-    description: "Professional document intelligence with cited answers.",
+    title: "DocMind — Document Intelligence for Legal Teams",
+    description:
+      "Stop digging through hundreds of pages. Semantic search and cited answers for legal and compliance workflows.",
   },
 };
 

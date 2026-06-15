@@ -36,9 +36,6 @@ export default function AppHeader({
               New document
             </button>
           )}
-          <span className="hidden rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-medium text-emerald-700 ring-1 ring-emerald-600/10 sm:inline">
-            Live demo
-          </span>
         </div>
       </div>
     </header>

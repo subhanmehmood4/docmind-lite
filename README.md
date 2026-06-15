@@ -1,6 +1,6 @@
-# DocMind Lite
+# DocMind
 
-AI-powered document Q&A demo built by [DevAxon](https://devaxon.com). Upload a PDF, ask questions in natural language, and get answers with source citations powered by RAG (Retrieval-Augmented Generation).
+Document intelligence for legal and compliance teams — built by [DevAxon](https://devaxon.com). Upload a PDF, ask questions in natural language, and get answers with page-level citations powered by production RAG.
 
 ## Features
 

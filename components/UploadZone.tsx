@@ -215,7 +215,7 @@ export default function UploadZone({
           disabled={disabled}
           className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-indigo-200 hover:bg-indigo-50/50 hover:text-indigo-700 disabled:opacity-50"
         >
-          Try sample contract PDF
+          Explore with sample agreement
         </button>
       )}
     </div>

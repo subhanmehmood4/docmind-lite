@@ -1,4 +1,5 @@
 import { CheckIcon, FileIcon } from "./icons";
+import { WORKSPACE_ENV, WORKSPACE_NAME } from "@/lib/constants";
 
 interface DocumentSidebarProps {
   filename: string;
@@ -30,7 +31,7 @@ export default function DocumentSidebar({ filename, pages, chunks }: DocumentSid
 
         <div className="mt-4 flex items-center gap-2 rounded-lg bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-700">
           <CheckIcon className="h-3.5 w-3.5" />
-          Ready for questions
+          Indexed and ready
         </div>
       </div>
 
@@ -48,10 +49,15 @@ export default function DocumentSidebar({ filename, pages, chunks }: DocumentSid
         </ul>
       </div>
 
-      <div className="mt-auto rounded-xl border border-dashed border-slate-200 bg-white/70 p-4">
-        <p className="text-xs leading-relaxed text-slate-500">
-          DocMind retrieves relevant passages from your document before generating each answer —
-          reducing hallucinations and keeping responses traceable.
+      <div className="mt-auto space-y-3">
+        <div className="rounded-xl border border-dashed border-slate-200 bg-white/70 p-4">
+          <p className="text-xs leading-relaxed text-slate-500">
+            DocMind retrieves relevant passages before generating each answer — keeping
+            responses traceable and reducing hallucinations.
+          </p>
+        </div>
+        <p className="text-xs text-slate-400">
+          {WORKSPACE_NAME} · {WORKSPACE_ENV}
         </p>
       </div>
     </aside>

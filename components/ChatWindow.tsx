@@ -122,7 +122,12 @@ export default function ChatWindow({ documentReady, documentName }: ChatWindowPr
   return (
     <div className="flex h-full min-h-[calc(100vh-3.5rem)] flex-col bg-white">
       <div className="border-b border-slate-200 px-5 py-4">
-        <p className="text-sm font-medium text-slate-900">Ask your document</p>
+        <div className="flex items-center gap-2">
+          <p className="text-sm font-medium text-slate-900">Ask your document</p>
+          <span className="rounded-full bg-cyan-500 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+            Phase 2
+          </span>
+        </div>
         {documentName && (
           <p className="mt-0.5 truncate text-xs text-slate-500">{documentName}</p>
         )}
@@ -135,10 +140,10 @@ export default function ChatWindow({ documentReady, documentName }: ChatWindowPr
               <SparkIcon />
             </div>
             <h2 className="mt-4 text-lg font-semibold text-slate-900">
-              What would you like to know?
+              Phase 2: Ask anything about this document
             </h2>
             <p className="mt-2 text-sm text-slate-500">
-              Ask anything about the uploaded document. Every answer includes source citations.
+              Every answer includes page-level citations you can verify — not guesses from a generic chatbot.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-2">
               {SUGGESTIONS.map((suggestion) => (

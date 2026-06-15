@@ -5,3 +5,6 @@ export const CHAT_MODEL = "llama-3.3-70b-versatile";
 export const EMBEDDING_DIMENSIONS = 768;
 export const MATCH_COUNT = 5;
 export const GROQ_BASE_URL = "https://api.groq.com/openai/v1";
+
+export const WORKSPACE_NAME = "Sterling Legal";
+export const WORKSPACE_ENV = "Production";
