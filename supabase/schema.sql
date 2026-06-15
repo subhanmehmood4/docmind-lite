@@ -15,10 +15,11 @@ create table if not exists documents (
   created_at  timestamptz default now()
 );
 
-create index if not exists documents_embedding_idx
+-- HNSW works with small demo datasets; IVFFlat needs 1000+ rows
+drop index if exists documents_embedding_idx;
+create index if not exists documents_embedding_hnsw_idx
   on documents
-  using ivfflat (embedding vector_cosine_ops)
-  with (lists = 100);
+  using hnsw (embedding vector_cosine_ops);
 
 create or replace function match_documents (
   query_embedding vector(768),

@@ -4,7 +4,7 @@ import { MATCH_COUNT } from "@/lib/constants";
 import { chatWithContext } from "@/lib/groq";
 import { embedQuery } from "@/lib/embeddings";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
-import { matchDocuments } from "@/lib/supabase";
+import { hasDocuments, matchDocuments } from "@/lib/supabase";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -52,9 +52,11 @@ export async function POST(request: Request) {
     const matches = await matchDocuments(queryEmbedding, MATCH_COUNT);
 
     if (matches.length === 0) {
+      const uploaded = await hasDocuments();
       return NextResponse.json({
-        answer:
-          "No document has been uploaded yet. Please upload a PDF first.",
+        answer: uploaded
+          ? "I couldn't find relevant content for that question in the document."
+          : "No document has been uploaded yet. Please upload a PDF first.",
         citations: [],
       });
     }
