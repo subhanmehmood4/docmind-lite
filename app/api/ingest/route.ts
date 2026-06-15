@@ -2,7 +2,7 @@ import { getMissingEnvVars } from "@/lib/env";
 import { NextResponse } from "next/server";
 import { chunkPages } from "@/lib/chunk";
 import { MAX_PDF_SIZE_BYTES } from "@/lib/constants";
-import { embedTexts } from "@/lib/google";
+import { embedTexts } from "@/lib/embeddings";
 import { extractPagesFromPdf, hasExtractableText } from "@/lib/pdf";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import { clearDocuments, insertDocuments } from "@/lib/supabase";

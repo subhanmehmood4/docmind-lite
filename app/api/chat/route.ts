@@ -1,7 +1,8 @@
 import { getMissingEnvVars } from "@/lib/env";
 import { NextResponse } from "next/server";
 import { MATCH_COUNT } from "@/lib/constants";
-import { chatWithContext, embedQuery } from "@/lib/google";
+import { chatWithContext } from "@/lib/groq";
+import { embedQuery } from "@/lib/embeddings";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import { matchDocuments } from "@/lib/supabase";
 

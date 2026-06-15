@@ -85,7 +85,7 @@ export default function Home() {
         <div className="border-b border-amber-200 bg-amber-50 px-4 py-3 sm:px-6">
           <div className="mx-auto max-w-7xl text-sm text-amber-900">
             <span className="font-medium">Setup required.</span>{" "}
-            Add your Gemini + Supabase keys to <code className="rounded bg-amber-100 px-1">.env.local</code>{" "}
+            Add your Groq + Hugging Face + Supabase keys to <code className="rounded bg-amber-100 px-1">.env.local</code>{" "}
             and restart the server.
           </div>
         </div>

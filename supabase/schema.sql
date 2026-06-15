@@ -1,4 +1,4 @@
--- DocMind Lite — Supabase schema (Google Gemini embeddings = 768 dims)
+-- DocMind Lite — Supabase schema (768-dim embeddings via Hugging Face mpnet)
 -- Run in Supabase SQL Editor
 --
 -- If you previously used OpenAI (1536 dims), drop the old table first:

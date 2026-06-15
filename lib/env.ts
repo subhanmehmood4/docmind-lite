@@ -4,7 +4,8 @@ export function getSupabaseKey(): string | undefined {
 
 export function getEnvStatus() {
   return {
-    gemini: !!process.env.GEMINI_API_KEY,
+    groq: !!process.env.GROQ_API_KEY,
+    huggingface: !!process.env.HUGGINGFACE_API_KEY,
     supabaseUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
     supabaseKey: !!getSupabaseKey(),
   };
@@ -12,7 +13,8 @@ export function getEnvStatus() {
 
 export function getMissingEnvVars(): string[] {
   const missing: string[] = [];
-  if (!process.env.GEMINI_API_KEY) missing.push("GEMINI_API_KEY");
+  if (!process.env.GROQ_API_KEY) missing.push("GROQ_API_KEY");
+  if (!process.env.HUGGINGFACE_API_KEY) missing.push("HUGGINGFACE_API_KEY");
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) missing.push("NEXT_PUBLIC_SUPABASE_URL");
   if (!getSupabaseKey()) {
     missing.push("SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY");

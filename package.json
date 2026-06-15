@@ -10,9 +10,10 @@
     "generate:sample": "node scripts/generate-sample-pdf.mjs"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
+    "@huggingface/inference": "^4.13.19",
     "@supabase/supabase-js": "^2.108.1",
     "next": "14.2.35",
+    "openai": "^6.42.0",
     "pdf-lib": "^1.17.1",
     "react": "^18",
     "react-dom": "^18",
