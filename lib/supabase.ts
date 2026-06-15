@@ -1,7 +1,11 @@
-import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { createClient, PostgrestError, SupabaseClient } from "@supabase/supabase-js";
 import { getSupabaseKey } from "./env";
 
 let client: SupabaseClient | null = null;
+
+function supabaseError(error: PostgrestError): Error {
+  return new Error(error.message);
+}
 
 export function getSupabase(): SupabaseClient {
   if (client) return client;
@@ -33,13 +37,13 @@ export interface MatchedDocument {
 export async function clearDocuments(): Promise<void> {
   const supabase = getSupabase();
   const { error } = await supabase.from("documents").delete().gte("id", 0);
-  if (error) throw error;
+  if (error) throw supabaseError(error);
 }
 
 export async function insertDocuments(rows: DocumentRow[]): Promise<void> {
   const supabase = getSupabase();
   const { error } = await supabase.from("documents").insert(rows);
-  if (error) throw error;
+  if (error) throw supabaseError(error);
 }
 
 export async function matchDocuments(
@@ -52,6 +56,6 @@ export async function matchDocuments(
     match_count: matchCount,
   });
 
-  if (error) throw error;
+  if (error) throw supabaseError(error);
   return (data ?? []) as MatchedDocument[];
 }

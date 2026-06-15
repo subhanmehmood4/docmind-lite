@@ -37,6 +37,14 @@ $$;
 -- Demo setup: allow server-side access with the anon key
 alter table documents disable row level security;
 
+drop policy if exists "docmind_demo_all" on documents;
+create policy "docmind_demo_all"
+  on documents
+  for all
+  to anon, authenticated
+  using (true)
+  with check (true);
+
 grant usage on schema public to anon, authenticated;
 grant all on table documents to anon, authenticated;
 grant execute on function match_documents(vector, int) to anon, authenticated;
