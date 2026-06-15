@@ -33,3 +33,11 @@ as $$
   order by documents.embedding <=> query_embedding
   limit match_count;
 $$;
+
+-- Demo setup: allow server-side access with the anon key
+alter table documents disable row level security;
+
+grant usage on schema public to anon, authenticated;
+grant all on table documents to anon, authenticated;
+grant execute on function match_documents(vector, int) to anon, authenticated;
+grant usage, select on all sequences in schema public to anon, authenticated;
